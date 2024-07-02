@@ -18,6 +18,7 @@
             <td>{{item.name}}</td>
             <td><a href="{% url 'item' item.pk %}">View</a></td>
             <td><a href="{% url 'edit-item' item.pk %}">Edit</a></td>
+            <td><a href="{% url 'delete-item' item.pk %}">Delete</a></td>
         </tr>
         {% empty %}
         <h3>No items have been entered.</h3>

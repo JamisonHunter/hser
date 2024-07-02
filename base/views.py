@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView    
 from django.urls import reverse_lazy
 from .models import Item
 
@@ -23,3 +23,6 @@ class UpdateItem(UpdateView):
     fields = ["user", "name", "serial", "image"]
     success_url = reverse_lazy("home")
 
+class DeleteItem(DeleteView):
+    model = Item
+    success_url = reverse_lazy("home")
