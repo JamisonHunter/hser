@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView
+from .models import Item
 
 # Create your views here.
-def home(request):
-    return HttpResponse("Home")
+class Home(ListView):
+    model = Item
