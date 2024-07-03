@@ -19,24 +19,24 @@
     </nav>
     <div class="welcome-container">
         <h2>Welcome, {{ request.user }}</h2>
-        <p>This application is desighed to store the names of items and their associated serial numbers.</p>
+        <p>This application is designed to store the names of items and their associated serial numbers.</p>
     </div>
-    <form method="GET">
+    <form method="GET" class="search-form">
         <input type="text" name="search-area" value="{{ search_input }}">
-        <input type="submit" value="Search">        
+        <input type="submit" value="Search">
     </form>
     <a class="new-item" href="{% url 'new-item' %}">Add Item</a>
-    <table>
+    <div class="items-list">
         {% for item in object_list %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td><a href="{% url 'item' item.pk %}">View</a></td>
-            <td><a href="{% url 'edit-item' item.pk %}">Edit</a></td>
-            <td><a href="{% url 'delete-item' item.pk %}">Delete</a></td>
-        </tr>
+            <div class="item-container">
+                <p>{{ item.name }}</p>
+                <a href="{% url 'item' item.pk %}">View</a>
+                <a href="{% url 'edit-item' item.pk %}">Edit</a>
+                <a href="{% url 'delete-item' item.pk %}">Delete</a>
+            </div>
         {% empty %}
-        <p>No items have been entered.</p>
+            <p>No items have been entered.</p>
         {% endfor %}
-    </table>
+    </div>
 </body>
 </html>

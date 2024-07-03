@@ -17,7 +17,7 @@
         <a href="{% url 'login' %}">Login</a>
         {% endif %}
     </nav>
-    <h1>Item: {{ object.name }}</h1>
+    <h3>Item: {{ object.name }}</h3>
     <p>Serial Number: {{ object.serial }}</p>
     {% if object.image %}
         <img src="{{ object.image.url }}" alt="{{ object.name }}">
