@@ -1,9 +1,13 @@
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-p)=)x0@w#na*__&_1l7045@+u@d3ua9)9i)3)3@$5qc)&4@()0'
+
+load_dotenv()
 
 DEBUG = True
 
@@ -49,10 +53,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hser.wsgi.application'
 
-DATABASES = {
+DATABASES = {   
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('NAME'),
+        'USER': 'postgres',
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT'),
     }
 }
 
