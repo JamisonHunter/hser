@@ -1,3 +1,4 @@
+# Dockerfile
 FROM python:3.12
 
 # Set environment variables
@@ -11,6 +12,9 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+# Copy Django project
+COPY . /app/
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
