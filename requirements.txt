@@ -1,3 +1,5 @@
 Django
 gunicorn
 Pillow
+python-dotenv
+psycopg2
