@@ -4,9 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Details</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
-    {% block extra_css %}{% endblock %}
+    <style>
+        body {
+    background-color: #303030;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 2px solid linen;
+    padding: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: aqua;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.welcome-container {
+    background-color: #181818;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid linen;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type='text'],
+input[type='password'] {
+    background-color: #181818;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid linen;
+    margin-bottom: 10px;
+}
+
+input[type='submit'] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    background-color: midnightblue;
+    color: white;
+    border: 2px solid linen;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: darkblue;
+}
+
+.new-item {
+    margin: 20px 0;
+    font-size: 20px;
+    color: aqua;
+    text-decoration: none;
+}
+
+.new-item:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.items-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.item-container {
+    background-color: #404040;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid linen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-container p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.item-container a {
+    margin-left: 10px;
+    color: aqua;
+    text-decoration: none;
+}
+
+.item-container a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+img {
+    height: auto;
+    width: 700px;
+}
+
+@media only screen and (max-width: 700px) {
+    img {
+        width: 400px;
+        height: auto;
+    }
+}
+
+    </style>
 </head>
 <body>
     <nav>
