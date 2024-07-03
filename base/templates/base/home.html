@@ -27,11 +27,14 @@ nav {
 
 nav a {
     margin: 0 10px;
+}
+
+a {
     color: aqua;
     text-decoration: none;
 }
 
-nav a:hover {
+a:hover {
     color: blue;
     text-decoration: underline;
 }
@@ -145,6 +148,7 @@ img {
     <div class="welcome-container">
         <h2>Welcome, {{ request.user }}</h2>
         <p>This application is designed to store the names of items and their associated serial numbers.</p>
+        <p>This project is <a target="_blank" href="https://github.com/JamisonHunter/hser/tree/main">open source</a>.</p>
     </div>
     <form method="GET" class="search-form">
         <input type="text" name="search-area" value="{{ search_input }}">
