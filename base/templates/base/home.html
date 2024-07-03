@@ -140,7 +140,10 @@ img {
     <nav>
         <a href="{% url 'home' %}">Home</a>
         {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}">Logout</a>
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" style="background: none; border: none; color: aqua; cursor: pointer;">Logout</button>
+        </form>
         {% else %}
         <a href="{% url 'login' %}">Login</a>
         {% endif %}
